@@ -1,0 +1,6 @@
+services:
+  comedy-server-application:
+    image: priyanshijat6701/comedy-server-image:latest
+    container_name: comedy-server-app
+    ports:
+      - "3100:3100"
