@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: api-igs
+  namespace: api-ns
+  labels:
+    app.kubernetes.io/name: api-igs
+spec:
+  rules:
+ 
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: api-svc
+            port: 
+              number: 3100

@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: api-svc
+  namespace: api-ns
+spec:
+  selector:
+    app: api-app
+
+  ports:
+    - protocol: TCP
+      port: 3100
+      targetPort: 3100
