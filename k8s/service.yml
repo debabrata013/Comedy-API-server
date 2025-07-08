@@ -1,13 +1,15 @@
-kind: Service
 apiVersion: v1
+kind: Service
 metadata:
   name: api-svc
   namespace: api-ns
 spec:
+  type: NodePort           # <--- Change this line!
   selector:
-    app: api-app
-
+    app: api-app               # <-- Match your deployment's label
   ports:
     - protocol: TCP
-      port: 3100
+      port: 80
       targetPort: 3100
+      nodePort: 31000       # Must be in range 30000–32767
+
